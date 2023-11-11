@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebcaBar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="header">
+
+
+    <% if (userLoggedIn) { %>
+      <button id="logoutButton">Выход</button>
+    <% } else { %>
+      <button id="openModalButton">Register</button>
+      <button id="openLoginModalButton">Login</button>
+    <% } %>
+
+
+
+
+
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <form id="registrationForm">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="login">Login:</label><br>
+        <input type="text" id="login" name="login"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Register">
+      </form>
+      
+    </div>
+  </div>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <form id="loginForm">
+        <label for="loginEmail">Email:</label><br>
+        <input type="email" id="loginEmail" name="email"><br>
+        <label for="loginPassword">Password:</label><br>
+        <input type="password" id="loginPassword" name="password"><br>
+        <input type="submit" value="Login">
+      </form>
+      <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=profile&access_type=online&redirect_uri=http://localhost:3000/auth/google/callback&response_type=code&client_id=339918182318-mnao9hirveih24d8r4vfo5tp8abl66tf.apps.googleusercontent.com" target="_blank">GOOGLE</a>
+    </div>
+  </div>
+
+  </div>
+  
+  
+  <script src="main.js"></script>
+</body>
+</html>
